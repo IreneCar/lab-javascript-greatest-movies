@@ -68,7 +68,10 @@ orderByYear(movies);
 
 // Iteration 6: Alphabetic Order - Order by title and print the first 20 titles
 function orderAlphabetically(arrayPelis) {
-  let titulos = arrayPelis.sort((peli1, peli2) => {
+
+  let firstTwenty = arrayPelis.slice(0, 20);
+
+  let titulos = firstTwenty.sort((peli1, peli2) => {
     if(peli1.title < peli2.firstname) {
       return -1;
     } else if (peli1.title > peli2.firstname){
