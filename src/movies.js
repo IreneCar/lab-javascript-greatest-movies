@@ -28,25 +28,67 @@ howManyMovies(movies)
 
 
 // Iteration 3: All scores average - Get the average of all scores with 2 decimals
-function scoresAverage() {}
+function scoresAverage(arrayM) {
+
+  let score = arrayM.filter ((scoreElement)=>{
+    return scoreElement.score;
+  })
+
+  const media = score.reduce((sum, numElement) => {
+    return sum += numElement;
+  }, 0) / arrayM.length;
+
+  return (media.toFixed(2) );
+}
+
+scoresAverage(movies)
 
 
 // Iteration 4: Drama movies - Get the average of Drama Movies
 function dramaMoviesScore() {}
 
+
 // Iteration 5: Ordering by year - Order by year, ascending (in growing order)
-function orderByYear() {}
+function orderByYear(arrayMov) {
+  let newArrayOrder = [];
+
+  let orderYear = arrayMov.sort((year1, year2) => {
+    if (year1.year < year2.year){
+      return -1;
+    } else {
+      return 1;
+    }
+    return newArrayOrder.push();
+  });
+
+  return newArrayOrder;
+};
+
+orderByYear(movies);
 
 // Iteration 6: Alphabetic Order - Order by title and print the first 20 titles
-function orderAlphabetically() {}
+function orderAlphabetically(arrayPelis) {
+  let titulos = arrayPelis.sort((peli1, peli2) => {
+    if(peli1.title < peli2.firstname) {
+      return -1;
+    } else if (peli1.title > peli2.firstname){
+      return 1;
+    }
+    return 0;
+  })
+
+  return titulos;
+}
+
+orderAlphabetically(movies)
+
+/////////////////////////////////***BONUS***/////////////////////////////////////
 
 // BONUS - Iteration 7: Time Format - Turn duration of the movies from hours to minutes
 function turnHoursToMinutes() {}
 
 // BONUS - Iteration 8: Best yearly score average - Best yearly score average
 function bestYearAvg() {}
-
-
 
 // The following is required to make unit tests work.
 /* Environment setup. Do not modify the below code. */
